@@ -6,6 +6,7 @@ export default class Player{
 #hpbar;
 #dmg;
 #score;
+#arrows = 0;
 #icon;
 #y;
 #x;
@@ -26,6 +27,7 @@ get maxhp()    {return this.#maxhp;}
 get hpbar()    {return this.#hpbar;}
 get dmg()   {return this.#dmg;}
 get score() {return this.#score;}
+get arrows() {return this.#arrows;}
 get icon()  {return this.#icon;}
 get y()     {return this.#y;}
 get x()     {return this.#x;}
@@ -42,7 +44,19 @@ set hp(h)   {
 }
 set dmg(d)  {this.#dmg=d;}
 set score(s){this.#score=s;}
+set arrows(s){this.#arrows=s;}
 set icon(i) {this.#icon=i;}
 set y(y)    {this.#y=y;}
 set x(x)    {this.#x=x;}
+
+takeArrow(num=1){
+    if(num==1){
+        this.#arrows++;        
+        document.getElementById("arrows").innerHTML+=this.#icons.arrow;
+    }else if(num==-1 && this.arrows>0){
+        this.#arrows--;        
+        let arrow = document.querySelector("#arrows img");
+        document.getElementById("arrows").removeChild(arrow);
+    }    
+}
 }

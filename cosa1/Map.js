@@ -2,12 +2,13 @@ import IconLibrary from "./IconLibrary.js";
 import Enemy from "./Enemy.js";
 import Player from "./Player.js";
 import Castle from "./Castle.js";
+import Rankings from "./Ranking.js";
 
 export default class Map{    
     #size; //Tamaño mapa (size*size)
     #grid; //Array bidimensional
     #enem; //Array enemigos
-    #icons=new IconLibrary();
+    #icons=new IconLibrary();    
     #player;
     #castle;
     #time = 0;
@@ -42,9 +43,9 @@ export default class Map{
         this.#grid[cp-2][cp]=this.#player.icon;         
         this.#castle=new Castle(cp,cp);
         this.#grid[cp][cp]=this.#castle.icon; //Castillo        
-    
+            
         this.addEvents();
-        this.enemSpawn();
+        this.enemSpawn();        
         this.printMap();
 
         document.getElementById("legend").innerHTML = `
@@ -96,6 +97,9 @@ export default class Map{
                 let td = document.createElement("td");           //Tabla
                 td.innerHTML=this.#grid[y][x];                   //Tabla
                 td.setAttribute("id","cell/"+y+"/"+x);           //Tabla
+                td.addEventListener("click",()=>{
+                    this.click(y,x);
+                })
                 tr.appendChild(td);                              //Tabla
             }         
         }
@@ -127,6 +131,8 @@ export default class Map{
         if(this.#castle.dmg!=0){
             document.getElementById("castledmg").innerHTML = `DMG : ${this.#castle.dmg}`;
         }
+
+        Rankings.readRankings();
     }
 
     //Mueve al jugador
@@ -298,6 +304,9 @@ export default class Map{
             } else {
                 killed = true;
                 this.#player.score += enemy.dmg;
+                if(enemy.name=="skeleton"){
+                    this.#player.takeArrow();
+                }
                 this.#enem.splice(this.#enem.indexOf(enemy),1);                                
                 if(this.#player.score>59){
                     this.#castle.hp++;
@@ -334,7 +343,10 @@ export default class Map{
             } 
             if(enemy.hp<1){
                 killed = true;
-                this.#player.score += enemy.dmg;                                             
+                this.#player.score += enemy.dmg;  
+                if(enemy.name=="skeleton"){
+                    this.#player.takeArrow();
+                }                                           
             }
         }
         
@@ -477,9 +489,40 @@ export default class Map{
         }        
     }
 
+    click(y,x){
+        if(this.#icons.enemies.includes(this.#grid[y][x]) && this.#player.arrows>0){ //if flecha
+            let killed = false;
+            let enemy = 0;        
+            document.getElementById("cell/"+y+"/"+x).setAttribute("style", "background-color: rgb(250, 106, 106)");
+            setTimeout(()=>{
+                document.getElementById("cell/"+y+"/"+x).setAttribute("style", "background-color: white");
+            },"100");  
+            this.#enem.forEach(e => {
+                if(e.y==y && e.x==x){
+                    enemy = e;
+                }
+            });        
+            if(enemy!=0){
+                enemy.hp -= this.#player.dmg;            
+                if(enemy.hp<1){
+                    killed = true;
+                    this.#player.score += enemy.dmg;
+                    this.#enem.splice(this.#enem.indexOf(enemy),1);                                
+                    this.#grid[y][x]="";
+                    if(this.#player.score>59){
+                        this.#castle.hp++;
+                    }
+                }
+            }
+            this.#player.takeArrow(-1);
+            this.updateMap();
+        }            
+    }
+    
+
     lose(){
         document.getElementById("divTable").innerHTML = `<h1>Has muerto</h1><br><h2>Puntuación: ${this.#player.score}</h2>`;                
-        document.getElementById("tutorial").innerHTML = `<button class="info retry" onclick="recargar()">Volver a intentar</button>`;
+        document.getElementById("tutorial").innerHTML = `<button class="info retry" onclick="recargar()">Volver a intentar</button>`;                
         if(document.cookie.indexOf("highscore")==-1){
             document.cookie = `highscore=${this.#player.score}`;
         }else{
@@ -487,6 +530,10 @@ export default class Map{
             if(highscore<this.#player.score){
                 document.cookie = `highscore=${this.#player.score}`;
                 highscore = this.#player.score;
+                document.getElementById("tutorial").innerHTML = `<button class="info retry" id="postRecord">Añadir a ranking</button>`;
+                document.getElementById("postRecord").addEventListener("click",()=>{
+                    
+                })
             }
             document.getElementById("divTable").innerHTML += `<br><h2>Puntuación mayor: ${highscore}</h2>`;
         }

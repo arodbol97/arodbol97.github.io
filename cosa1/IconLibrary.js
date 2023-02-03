@@ -5,9 +5,10 @@ export default class IconLibrary{
     #castle3="<img class='icon' src='img/castillo3.png'>"; //Icono castillo 3
     #slime="<img class='icon' src='img/slime.png'>"; //Icono slime
     #ghost="<img class='icon' src='img/ghost.png'>"; //Icono fantasma
-    #skeleton="<img class='icon' src='img/skeleton.png'>"; //Icono esqueleto
+    #skeleton="<img class='icon' id='skely' src='img/skeleton.png'>"; //Icono esqueleto
     #potion="<img class='icon' src='img/potion.png'>"; //Icono pocion
     #weapon="<img class='icon' src='img/weapon.png'>"; //Icono arma
+    #arrow="<img class='icon' src='img/arrow.png'>"; //Icono flecha
     #archer="<img class='icon' src='img/archer.png'>"; //Icono arquero
     #enemies = new Array(this.#slime,this.#skeleton,this.#ghost);
     #objects = new Array(this.#potion,this.#weapon,this.#archer);
@@ -25,6 +26,7 @@ export default class IconLibrary{
     get skeleton()  {return this.#skeleton;}
     get potion()    {return this.#potion;}
     get weapon()    {return this.#weapon;}
+    get arrow()    {return this.#arrow;}
     get archer()    {return this.#archer;}
     get enemies()   {return this.#enemies;}
     get objects()   {return this.#objects;}
