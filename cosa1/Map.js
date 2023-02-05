@@ -84,6 +84,18 @@ export default class Map{
                 this.move("right");
             }
         });
+        document.getElementById("buttonup").addEventListener("click",()=>{
+            this.move("up");
+        });
+        document.getElementById("buttonleft").addEventListener("click",()=>{
+            this.move("left");
+        });
+        document.getElementById("buttonright").addEventListener("click",()=>{
+            this.move("right");
+        });
+        document.getElementById("buttondown").addEventListener("click",()=>{
+            this.move("down");
+        });
     }
 
     //Imprime grid
@@ -523,6 +535,7 @@ export default class Map{
     lose(){
         document.getElementById("divTable").innerHTML = `<h1>Has muerto</h1><br><h2>Puntuación: ${this.#player.score}</h2>`;                
         document.getElementById("tutorial").innerHTML = `<button class="info retry" onclick="recargar()">Volver a intentar</button>`;                
+        document.getElementById("phonebuttons").innerHTML = ``;                
         if(document.cookie.indexOf("highscore")==-1){
             document.cookie = `highscore=${this.#player.score}`;
         }else{
