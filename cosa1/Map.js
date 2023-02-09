@@ -543,7 +543,7 @@ export default class Map{
             if(highscore<this.#player.score){
                 document.cookie = `highscore=${this.#player.score}`;
                 highscore = this.#player.score;
-                document.getElementById("tutorial").innerHTML = `<button class="info retry" id="postRecord">Añadir a ranking</button>`;
+                document.getElementById("tutorial").innerHTML += `<button class="info retry" id="postRecord">Añadir a ranking</button>`;
                 document.getElementById("postRecord").addEventListener("click",()=>{
                     
                 })
