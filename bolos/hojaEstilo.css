@@ -13,7 +13,7 @@ h2 {
     padding: 5px;
     text-align: center;
     text-shadow: 1px 1px 1px #CCCCCC;
-    width: 99%;     
+    width: 100%;     
 }
 /*— estilos para los ul y li del formulario —*/
 
@@ -115,6 +115,7 @@ table {
     height: 15px;
     border-top: none;
     border-left: none;
+    opacity: 0;
 }
 td {
     border: 1px solid black;
@@ -134,11 +135,28 @@ td {
     margin:0px; 
     position: relative;    
     top: 80px;
+    animation: spin 3s infinite linear;
  }
  #throw{
     border: 1px solid black;
     width: 29%;
     margin-left: auto;
+    cursor: pointer;
+    font-size: 50px;
+    padding-top: 35px;    
+    text-align: center;
+ }
+ #throw:hover{
+    background-color: #aaa;
+ }
+ #notThrow{
+    border: 1px solid black;
+    width: 29%;
+    margin-left: auto;
+    cursor: auto;
+    font-size: 50px;
+    padding-top: 35px;
+    text-align: center;
  }
  #game{
     border: 1px solid black;
@@ -236,3 +254,8 @@ td {
     margin-top: 5px;
     margin-bottom: 50px;
  }
+
+ @keyframes spin {
+    0% {transform:rotateZ(0deg)}
+    100% {transform:rotateZ(360deg)}
+}
