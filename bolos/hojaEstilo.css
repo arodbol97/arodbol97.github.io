@@ -1,0 +1,238 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2 {
+    background: none repeat scroll 0 0 #c1bfbf;
+    border-radius: 5px;
+    color: #164a20;
+    display: block;
+    font-family: calibri;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #CCCCCC;
+    width: 99%;     
+}
+/*— estilos para los ul y li del formulario —*/
+
+label {
+    color: #555555;
+    display: inline-block;
+    float: none;
+    font-family: calibri;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 3px;
+    padding: 3px;
+    width: 90px;
+}
+
+div{
+    padding-bottom: 10px;
+}
+button {
+    margin-left: 45%;
+    
+}
+
+input[type="text"] { 
+    height:20px; 
+    width:220px; 
+    padding:5px 8px;
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    color: #888;
+    font-size: 12px;
+    padding-right:30px;
+    -moz-transition: padding .25s; 
+    -webkit-transition: padding .25s; 
+    -o-transition: padding .25s;
+    transition: padding .25s;
+}
+
+
+
+
+
+
+/* === Estilos del boton de Envio === */
+button.submit {
+    padding: 9px 17px;
+    font-family: Helvetica,calibri, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    color: #444;
+    border: none;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#bbb));
+    background-image: -moz-linear-gradient(0% 100% 90deg, #BBBBBB, #FFFFFF);
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+button.submit:hover {
+    opacity:.55;
+    cursor: pointer; 
+    color: #fff;
+}
+button.submit:active {
+    border: 1px solid #222;
+    box-shadow: 0 0 10px 5px #444 inset; 
+}
+/* estilos table */
+table {    
+    text-align: center;
+    border-collapse: collapse;
+    width: 70%;
+}
+.turnDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+#shots {
+    width: 66.6%;
+    height: 15px;        
+    font-size: 13px;
+}
+.score span{
+    width: 100%;
+    margin-top: 20%;
+    opacity: 0;
+}
+#shotsf{    
+    width: 100%;
+    height: 15px;   
+    font-size: 13px;   
+}
+#shot3{
+    border-right: none;
+}
+.shot{
+    height: 15px;
+    border-top: none;
+    border-left: none;
+}
+td {
+    border: 1px solid black;
+    height: 45px;
+    width: 50px;
+   
+    padding:0;
+}
+.playerNumber{
+    width: 70px;
+    background-color: #c1bfbf;
+}
+ #ball{
+    width: 40px;
+    height: 40px;
+    padding:0px;
+    margin:0px; 
+    position: relative;    
+    top: 80px;
+ }
+ #throw{
+    border: 1px solid black;
+    width: 29%;
+    margin-left: auto;
+ }
+ #game{
+    border: 1px solid black;
+    border-bottom: 20px solid grey;
+    border-top: 20px solid grey;
+    margin-top: 1%;
+    width: 100%;
+    height: 210px;
+    display: flex;    
+    padding: 0;
+ } 
+ #pins{
+    width: 140px;
+    height: 200px;    
+    margin-left: auto;
+    display: grid;    
+    grid-template-areas:    
+    '.  .  .  p6'
+    '.  .  p3 . '
+    '.  p1 .  p7'
+    'p0 .  p4 . '
+    '.  p2 .  p8'
+    '.  .  p5 . '
+    '.  .  .  p9'
+    ;
+ }
+ #pins img{
+    width: 30px;
+ }
+ #p0{grid-area: p0;}
+ #p1{grid-area: p1;}
+ #p2{grid-area: p2;}
+ #p3{grid-area: p3;}
+ #p4{grid-area: p4;}
+ #p5{grid-area: p5;}
+ #p6{grid-area: p6;}
+ #p7{grid-area: p7;}
+ #p8{grid-area: p8;}
+ #p9{grid-area: p9;}
+
+ .sweetAlert{
+     margin:0 auto;
+     width:100%;
+     height:100%;
+     position:fixed;
+     top:0;
+     left:0;
+     background-color:rgba(95, 95, 95, 0.5);
+     z-index:1000;     
+ }
+
+ .sweetAlert div{
+    margin: auto;
+    margin-top: 15%;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;    
+    text-align: center;
+ }
+
+ .sweetAlert div div{
+    margin: auto;
+    width: 90%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;    
+ }
+
+ .sweetAlert div button{
+    margin-left: 10%;      
+    margin-right: 10%;           
+    width: 90px;
+    height: 35px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+ }
+
+ #continue{
+    background-color: deepskyblue;
+ }
+
+ #continue:hover{
+    background-color: rgb(27, 198, 255);
+ }
+
+ #abandon{
+    background-color: rgb(230, 34, 34);
+ }
+ 
+ #abandon:hover{
+    background-color: rgb(255, 0, 0);
+ }
+ .sweetAlert div span{    
+    margin-top: 5px;
+    margin-bottom: 50px;
+ }
