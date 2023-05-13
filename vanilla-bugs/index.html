@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="skyrim bug, skyrim glitch">
+    <meta name="keywords" content="skyrim bug,skyrim glitch">
+    <meta name="robots" content="noindex">
     <meta name="google-site-verification" content="uzURRbwyYEsq7Ja9eh80Iqp_bjn3wSKxVwAq_E0mAm4" />
     <link rel="stylesheet" href="../style.css">
-    <title>Skyrim Troubleshooting</title>
+    <title>Vanilla bugs - arodbol97.github.io</title>
 </head>
 <body>
     <header>
@@ -18,30 +19,87 @@
             <h1>Skyrim Troubleshooting</h1> 
             <nav>
                 <ul>
-                    <li><a href="vanilla-bugs/"><button>Vanilla Bugs</button></a></li>
-                    <li><a href="mod-bugs/"><button>Modded Bugs</button></a></li>
+                    <li><a href="https://arodbol97.github.io/vanilla-bugs/"><button>Vanilla Bugs</button></a></li>
+                    <li><a href="https://arodbol97.github.io/mod-bugs/"><button>Modded Bugs</button></a></li>
                 </ul>
             </nav>        
         </div>        
     </header>  
     <main>
+        <h2>Vanilla Bugs</h2>
+
         <article>
-            <h3><a href="vanilla-bugs/art1/">Intro Cart Bug</a></h3>
-            <p>Solution 1</p>
+            <h3><a href="https://arodbol97.github.io/vanilla-bugs/intro-cart/">Intro Cart Bug</a></h3>
+            <p>Carts in Skyrim are a dangerous form of transit, as shown by this glitch that most players have experienced at some point. This can be one of the toughest bugs to iron out for any players using mods, but if you're playing vanilla you should definately try installing one of these mods to try and fix it quickly:</p>
+            <p>
+                <ol>
+                    <li>
+                        <a href="https://www.nexusmods.com/skyrimspecialedition/mods/60968" rel="nofollow"><strong>Prisoner cart opening fix SE and AE</strong></a>, a specific fix.
+                    </li>
+                    <li>
+                        <a href="https://www.nexusmods.com/skyrimspecialedition/mods/266" rel="nofollow"><strong>Unofficial Skyrim Special Edition Patch</strong></a>, a mod that aims to fix most of the game's glitches. It may fix the cart if the first one didn't work.
+                    </li>
+                    <li>
+                        <a href="https://www.nexusmods.com/skyrimspecialedition/mods/272" rel="nofollow"><strong>Alternate Life - Live Another Life</strong></a>, for the quitter. This mod will allow you to avoid the scene alltogether if you are not able to fix it and you just want to play.
+                    </li>
+                </ol>
+            </p>    
         </article>
         <h3 style="text-align: center;width: 100%;">add</h3>
         <article>
-            <h3><a href="vanilla-bugs/art2/">Infinite loading screen</a></h3>
-            <p>Solution 2</p>
+            <h3><a href="https://arodbol97.github.io/vanilla-bugs/infinite-loading-screen/">Infinite loading screen</a></h3>
+            <p>There is a multitude of reasons for Skyrim to get stuck while loading the game resulting in an infinite loading screen, or "ILS". To help you fix some of the most common causes here's a list of possible solutions:</p>
+            <p>
+                <ol>
+                    <li>
+                        <strong>Change memory allocation</strong>. The main reason for the ILS is the game not having enough memory to load the save. To fix this, you can make use of Skyrim Script Extender. If you didn't install it yet you can do it from the <a href="https://skse.silverlock.org/">SKSE page</a>. With this installed, you can edit the file SafetyLoad.ini in "Skyrim/data/SKSE/Plugins/" and change the value of <strong>EnabledOnlyLoading</strong> to <strong>true</strong>.
+                    </li>
+                    <li>
+                        <strong>Reinstall Skyrim</strong>.
+                    </li>
+                    <li>
+                        <strong>Udpdate Graphics Drivers</strong>.
+                    </li>
+                </ol>
+            </p>
+            <p>
+                For more in-depth instructions of these solutions you can see <a href="https://www.drivereasy.com/knowledge/solved-skyrim-infinite-loading-screen-issue-quickly-easily/" rel="nofollow">this web</a>.
+            </p>
         </article>
         <h3 style="text-align: center;width: 100%;">add</h3>
         <article>
-            <h3><a href="vanilla-bugs/art3/">Crash to desktop</a></h3>
-            <p>Solution 3</p>
+            <h3><a href="https://arodbol97.github.io/vanilla-bugs/crash-to-desktop/">Crash to desktop</a></h3>
+            <p>There is a multitude of reasons for Skyrim to crash to desktop, or "CTD". To help you fix some of the most common causes, or at least avoid the CTD as long as possible, here's a list of possible solutions:</p>
+            <p>
+                <ol>
+                    <li>
+                        <strong>Reinstall Skyrim</strong>, if the CTD is happening on launch.
+                    </li>
+                    <li>
+                        <strong>Use a manual save</strong>, if it happens on load, because sometimes the auto or quick saves can sometimes be faulty.
+                    </li>
+                    <li>
+                        <strong>Set your shadow settings to low</strong>, this is one of the more frequent causes for CTDs. To do this, use the game's launcher, go to options and then advanced graphic settings.
+                    </li>
+                    <li>
+                        <strong>Adjust your Windows sound settings</strong>. This is an official fix by Bethesda and used to be one of the main problems when booting the game for the first time. To change the setting you can right-click on the volume icon, go to audio settings, choose the audio output device and change the quality to <strong>24bit 44100 Hz</strong>.
+                    </li>
+                    <li>
+                        <strong>Udpdate Graphics Drivers</strong>.
+                    </li>
+                    <li>
+                        <strong>Install the latest patch of the game</strong>, but only if you are not using any mods at all.
+                    </li>
+                </ol>
+            </p>
+            <p>
+                For more in-depth instructions of these solutions you can see <a href="https://appuals.com/fix-skyrim-crash-to-desktop/" rel="nofollow">this web</a>.
+            </p>
         </article>
     </main>
     <footer>
-        <a href="https://docs.google.com/forms/d/17g1dROLPiDWg6f6vPzXe_ZgT8KNXmKp9FW4mHxoU09I/prefill">Search intention thingie</a>
+        <a href="https://docs.google.com/forms/d/17g1dROLPiDWg6f6vPzXe_ZgT8KNXmKp9FW4mHxoU09I/prefill">Search intention form</a>
+        <a href="https://arodbol97.github.io/about-me/" rel="nofollow">About me</a>
     </footer>
 </body>
 </html>

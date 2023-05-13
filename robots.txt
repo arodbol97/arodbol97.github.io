@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /about-me
+
+Sitemap: https://arodbol97.github.io/sitemap.xml

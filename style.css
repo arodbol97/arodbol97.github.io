@@ -7,6 +7,8 @@ body{
     margin: auto;
     margin-top: 2px;
     font-family: sans-serif;
+    word-spacing: 3px;
+    letter-spacing: 1px;    
 }
 
 header{
@@ -115,9 +117,30 @@ main article p{
     
 }
 
+main article li{
+    margin-bottom: 15px;
+}
+
 footer{
     grid-row: 3;    
     background-color: rgb(187, 217, 255);
     border: 2px solid rgb(134, 134, 134);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    margin: 20px;
+}
+
+@media only screen and (max-size: 575px){
+    #logo{
+        display: none;
+    }
+
+    header div{
+        width: 100%;
+    }
 }
