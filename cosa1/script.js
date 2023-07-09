@@ -1,11 +1,15 @@
 "use strict"
 
-import Map from "./Map.js";
+import Map from "./map.js";
 
 let overworld = new Map(21);
 
-function recargar(){
-    location.reload();
+document.getElementById("hp").innerHTML = `HP : ${overworld.player.hp}`;
+document.getElementById("dmg").innerHTML = `DMG : ${overworld.player.dmg}`;
+document.getElementById("score").innerHTML = `Score : ${overworld.player.score}`;
+
+function teleport(id){
+    overworld.teleport2(id);
 }
 
-window.recargar=recargar;
+window.teleport=teleport;

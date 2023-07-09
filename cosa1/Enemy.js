@@ -2,22 +2,19 @@ export default class Enemy{
     #name;
     #dmg;   //damage
     #hp;    //health
-    #icon;
     #y;     //coordsY
     #x;     //coordsX
 
-    constructor(n,d,h,i){
+    constructor(n,d,h){
         this.#name=n;
         this.#dmg=d;
         this.#hp=h;
-        this.#icon=i;
     }
 
     //getter
     get name()  {return this.#name;}
     get dmg()   {return this.#dmg;}
     get hp()    {return this.#hp;}
-    get icon()  {return this.#icon;}
     get y()     {return this.#y;}
     get x()     {return this.#x;}
 
